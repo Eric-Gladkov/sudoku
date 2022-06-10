@@ -22,9 +22,12 @@
             </table>
 
             <div class="panel-menu">
+
                 <select v-model="currentColor">
+
                     <option v-for="item in colors" v-bind:value="item"><span class="red">{{item}}</span></option>
                 </select>
+                <label>Цвет</label>
                 <span>{{ currentColor }} </span>
                 <button>Цифра:</button>
                 <button>Угловая нотация</button>
