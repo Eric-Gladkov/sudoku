@@ -26,6 +26,22 @@ var app = new Vue({
             "aquamarine",
         ],
 
+        modes: [
+            "цифра",
+            "угловая натация",
+            "центральная натация",
+            "очистить",
+        ],
+
+        cell_components: [
+            "edigit",
+            "ehint",
+            "ecenterhint",
+            "",
+        ],
+
+        currentMode: "",
+
         currentTabComponent: "ehint",
 
         currentColor: "",
@@ -52,7 +68,8 @@ var app = new Vue({
                     y: j,
                     v: null,
                     component: "edigit",
-                    candidate: [],
+                    // candidate: [],
+                    candidate: ["", "", "", "", "", "", "", "", "",],
                     color: "",
                 };
                 c.push(e);
@@ -60,21 +77,46 @@ var app = new Vue({
             r.push(c);
             d.push(j + 1);
         }
-        console.log(this.rows);
+        // console.log(this.rows);
 
     },
 
     methods: {
         setCoordinates: function (x, y) {
-            console.log(x);
-            console.log(y);
+            // console.log(x);
+            // console.log(y);
             this.currentX = x;
             this.currentY = y;
         },
 
         cellClick: function (x, y) {
+            // var cell = this.rows[y][x];
             this.rows[y][x].color = this.currentColor;
-            this.rows[y][x].v = this.currentDigit;
+            // this.rows[y][x].v = this.currentDigit;
+            this.rows[y][x].component = this.cell_components[this.currentMode];
+            switch (this.currentMode) {
+                case 0://Цифра
+                    this.rows[y][x].v = this.currentDigit;
+                    this.rows[y][x].candidate = ["", "", "", "", "", "", "", "", "",];
+                    // ["4","9"]
+                    break;
+                case 1://
+                case 2:
+                    this.rows[y][x].v = "";
+                    this.rows[y][x].candidate[this.currentDigit - 1] = this.currentDigit;
+                    console.log();
+                    break;
+                default://Очистить
+                    this.rows[y][x].v = "";
+                    this.rows[y][x].color = "";
+                    this.rows[y][x].candidate = ["", "", "", "", "", "", "", "", "",];
+                    this.varsClear();
+                    break;
+            }
+
+
+
+
         },
 
         varsClear: function () {

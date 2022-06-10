@@ -16,23 +16,40 @@
                 <tr v-for="row in rows">
                     <td v-for="cell in row" v-bind:x=cell.x v-bind:y=cell.y v-bind:class="cell.color"
                         v-on:mouseover="setCoordinates(cell.x, cell.y)" v-on:click="cellClick(cell.x, cell.y)">
-                        <component v-bind:is="cell.component" v-bind:title="cell.v"></component>
+                        <component v-bind:is="cell.component" v-bind:title="cell.v" v-bind:cell="cell"></component>
                     </td>
                 </tr>
             </table>
 
             <div class="panel-menu">
-
+                <!-- <label>Цвет</label>
                 <select v-model="currentColor">
-
-                    <option v-for="item in colors" v-bind:value="item"><span class="red">{{item}}</span></option>
+                    <option v-for="item in colors" v-bind:value="item"><span class="red">{item}</span></option>
+                </select> -->
+                <label>Режим</label>
+                <select v-model="currentMode">
+                    <option v-for="item,id in modes" v-bind:value="id"><span class="red">{{item}}</span></option>
                 </select>
-                <label>Цвет</label>
-                <span>{{ currentColor }} </span>
+                <!-- <label>Цифра</label>
+                <select v-model="currentColor">
+                    <option v-for="item in div_dig" v-bind:value="item"><span class="red">{item}</span></option>
+                </select> -->
+                <!-- <span>{ currentColor } </span>
                 <button>Цифра:</button>
                 <button>Угловая нотация</button>
                 <button>Центральная нотация</button>
-                <button v-on:click="varsClear">Очистить</button>
+                <button v-on:click="varsClear">Очистить</button> -->
+                <div class="_m-inline">
+                    <div v-for="i in colors" class="m-inline" @click="currentColor=i">
+                        <div class="m-td" :class="i"></div>
+                    </div>
+                    <!-- <div class="m-inline" @click="currentDigit='',currentColor=''">
+                        <div class="m-td">X</div>
+                    </div> -->
+                    <div v-for="i in div_dig" class="m-inline" @click="currentDigit=i">
+                        <div class="m-td" v-bind:class="{yellow: currentDigit==i}">{{i}}</div>
+                    </div>
+                </div>
             </div>
         </div>
 

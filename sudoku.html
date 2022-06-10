@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <!-- <link href="materialize.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h3>{{title}}</h3>
+        <div id="main">
+            <div id="desk">
+                <table>
+                    <tbody>
+                        <tr
+                            v-for="r in rows"
+                        >
+                            <td 
+                                v-for="c in r"
+                                :x="c.x"
+                                :y="c.y"
+                                :class="c.color"
+                                @mouseover="setCoordinates(c.x,c.y)"
+                                @click="c.v=currentDigit;c.color=currentColor"
+                            >
+                                <div class="">
+                                    {{c.v}}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tools">
+                <div>
+                    <div
+                        v-for="i in colors"
+                        class="m-inline"
+                        @click="currentColor=i"
+                    >
+                        <div class="m-td"
+                            :class="i"
+                        ></div>
+                    </div>
+                    <div
+                        class="m-inline"
+                        @click="currentDigit='',currentColor=''"
+                    >
+                        <div class="m-td"
+                        >X</div>
+                    </div>
+                </div>
+
+<!-- угловая нотация -->
+<!-- <div class="m-grid-parent m-td-s">
+    <div
+    class="m-grid-children"
+    v-for="i in div_dig"
+    >{{i}}</div>
+
+</div> -->
+<!-- центральная нотация -->
+<!-- <div class="m-grid-line m-td-m">
+    <div
+    class=""
+    v-for="i in div_dig"
+    >{{i}}</div>
+
+</div> -->
+
+
+                <div
+                    v-for="i in div_dig"
+                    class="m-inline"
+                    @click="currentDigit=i"
+                >
+                    <div class="m-td"
+                    >{{i}}</div>
+                </div>
+                <div
+                    class="m-inline"
+                    @click="currentDigit='',currentColor=''"
+                >
+                    <div class="m-td"
+                    >X</div>
+                </div>
+                <div>x={{currentX}}</div>
+                <div>y={{currentY}}</div>
+                <div>color={{currentColor}}</div>
+                <div>digit={{currentDigit}}</div>
+            </div>
+        </div>
+    </div>
+    <script src="./vue.js"></script>
+    <!-- <script src="materialize.min.js"></script> -->
+    <script src="./sudoku.js"></script>
+</body>
+</html>

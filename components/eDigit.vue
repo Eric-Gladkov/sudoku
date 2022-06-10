@@ -1,6 +1,6 @@
 <template>
   <div class="e-digit">
-    <div>{{ title }}</div>
+    <div>{{ cell.v }}</div>
   </div>
 </template>
 <script>
@@ -11,7 +11,7 @@
 // });
 module.exports = {
   name: "edigit",
-  props: ["title", "digit"],
+  props: ["title", "cell"],
   data: function () {
     return {};
   },
@@ -19,7 +19,7 @@ module.exports = {
 </script>
 <style>
 .e-digit {
-  background: rgb(235, 212, 4);
+  /* background: rgb(235, 212, 4); */
   width: 5em;
   height: 5em;
   font-size: 1em;

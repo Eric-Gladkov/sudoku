@@ -1,0 +1,92 @@
+#main{
+    /* Зададим размер шрифта в зависимости от минимального размера экрана */
+    /* Дальше будем плясать от этого размера используя em */
+    font-size: 10vmin;
+}
+.m-inline{
+    display: inline-flex;
+}
+
+td{
+    /* width: 9vmin;
+    height: 9vmin; */
+    width: 1.2em;
+    height: 1.2em;
+    background-color: aliceblue;
+    /* font-size: 8vmin; */
+    text-align: center;
+    border: 1px solid slategray;
+    /* padding: 6px; */
+}
+.m-td{
+    /* width: 9vmin;
+    height: 9vmin; */
+    box-sizing: border-box;
+    width: 1.2em;
+    height: 1.2em;
+    /* width: 50px;
+    height: 50px; */
+    /* font-size: 8vmin; */
+    /* font-size: 0.4em; */
+    text-align: center;
+    border: 1px solid slategray;
+    margin: 1px;
+}
+
+
+/* .m-td-s{
+    width: 9vmin;
+    height: 9vmin;
+    width: 50px;
+    height: 50px;
+    font-size: 3vmin;
+    text-align: center;
+    border: 1px solid slategray;
+}
+.m-td-m{
+    width: 9vmin;
+    height: 9vmin;
+    width: 50px;
+    height: 50px;
+    font-size: 5vmin;
+    text-align: center;
+    border: 1px solid slategray;
+} */
+table{
+    /* убрать пробелы между ячейками */
+    border-collapse: collapse;
+}
+/* #_main{
+    display: inline-flex;
+} */
+.red{
+    background-color: rgb(248, 105, 105);
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: rgb(50, 242, 50);
+}
+.plum{
+    background-color: plum;
+}
+.burlywood{
+    background-color: burlywood;
+}
+.aquamarine{
+    background-color: aquamarine;
+}
+
+
+
+
+/* 
+.m-grid-parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.m-grid-line{
+    display: grid;
+   grid-template-rows: 1fr;
+} */

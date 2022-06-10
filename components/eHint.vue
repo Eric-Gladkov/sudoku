@@ -27,7 +27,7 @@ module.exports = {
 </script>
 <style>
 .e-hint {
-  background: rgb(176, 224, 176);
+  /* background: rgb(176, 224, 176); */
   width: 5em;
   height: 5em;
   font-size: 1em;

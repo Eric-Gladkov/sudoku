@@ -1,6 +1,6 @@
 <template>
   <div class="e-center-hint">
-    <div>{{ title }}</div>
+    <div>{{ str }}</div>
   </div>
 </template>
 <script>
@@ -11,15 +11,30 @@
 // });
 module.exports = {
   name: "ecenterhint",
-  props: ["title", "digit"],
+  props: ["title", "cell"],
   data: function () {
-    return {};
+    return {
+      str: "",
+    };
+  },
+  watch: {
+    cell: function () {
+      this.m_join();
+    },
+  },
+  mounted: function () {},
+  methods: {
+    m_join: function () {
+      console.log(this.cell);
+      this.str = this.cell.candidate.join("");
+      console.log(this.str);
+    },
   },
 };
 </script>
 <style>
 .e-center-hint {
-  background: rgb(179, 14, 14);
+  /* background: rgb(179, 14, 14); */
   width: 5em;
   height: 5em;
   font-size: 1em;
