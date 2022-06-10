@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style1.css">
+</head>
+
+<body>
+    <div class="main">
+        <div id="app">
+            <table>
+                <tr v-for="row in rows">
+                    <td v-for="cell in row" v-bind:x=cell.x v-bind:y=cell.y v-bind:class="cell.color"
+                        v-on:mouseover="setCoordinates(cell.x, cell.y)" v-on:click="cellClick(cell.x, cell.y)">
+                        <component v-bind:is="cell.component" v-bind:title="cell.v"></component>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="panel-menu">
+                <select v-model="currentColor">
+                    <option v-for="item in colors" v-bind:value="item"><span class="red">{{item}}</span></option>
+                </select>
+                <span>{{ currentColor }} </span>
+                <button>Цифра:</button>
+                <button>Угловая нотация</button>
+                <button>Центральная нотация</button>
+                <button v-on:click="varsClear">Очистить</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="./tools/vue.js"></script>
+    <script src="./tools/httpVueLoader.js"></script>
+    <script src="./scripts/board.js"></script>
+</body>
+
+</html>

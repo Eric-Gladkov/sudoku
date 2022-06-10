@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    font-size: 2vmin;
+}
+
+.e-hint {
+    background: rgb(176, 224, 176);
+    width: 5em;
+    height: 5em;
+    font-size: 1em;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 2px;
+    align-items: center;
+    /**/
+    text-align: center;
+}
+
+.e-digit {
+    background: rgb(235, 212, 4);
+    width: 5em;
+    height: 5em;
+    font-size: 1em;
+    text-align: center;
+    align-items: center;
+    display: grid;
+}
+
+.e-digit > div {
+    font-size: 4em;
+ }
+
+
+
+ .e-center-hint {
+    background: rgb(179, 14, 14);
+    width: 5em;
+    height: 5em;
+    font-size: 1em;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+
+}
+
+.e-center-hint2 {
+    background: yellow;
+    width: 5em;
+    height: 5em;
+    /* font-size: 1em; */
+    text-align: center;
+    align-items: center;
+    display: grid;
+
+}
+
+.e-center-hint2 > div {
+    font-size: 1em;
+}
+
+.e-center-hint > div {
+    font-size: 1em;
+}
+
+td {
+    width: 5em;
+    height: 5em;
+    background: rgb(235, 227, 227);
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.red{
+    background-color: rgb(248, 105, 105);
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: rgb(50, 242, 50);
+}
+.plum{
+    background-color: plum;
+}
+.burlywood{
+    background-color: burlywood;
+}
+.aquamarine{
+    background-color: aquamarine;
+}
+
+table {
+    border-collapse: collapse;
+    display: inline-grid;
+    margin: 1em 0 0 1em;
+}
+
+td {
+    border: 2px solid gray;
+}
+
+td:nth-of-type(3n) {
+    border-right: 5px solid gray;
+}
+
+tr:nth-of-type(3n) {
+    border-bottom: 5px solid gray;
+}
+
+.panel-menu {
+    display: inline-grid;
+    margin: 1em 0 0 1em;
+}
+
+
+
