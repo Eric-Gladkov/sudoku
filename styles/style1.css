@@ -156,6 +156,7 @@ tr:nth-of-type(odd) {
     
     grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px;
     grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    margin: 5px;
 }
 
 .m-inline{
