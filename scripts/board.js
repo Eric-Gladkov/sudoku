@@ -24,6 +24,9 @@ var app = new Vue({
             "plum",
             "burlywood",
             "aquamarine",
+            "black",
+            "grey",
+            "pink",
         ],
 
         modes: [

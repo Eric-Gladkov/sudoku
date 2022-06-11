@@ -7,7 +7,7 @@
     font-size: 2vmin;
 }
 
-.e-hint {
+/* .e-hint {
     background: rgb(176, 224, 176);
     width: 5em;
     height: 5em;
@@ -19,7 +19,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 2px;
     align-items: center;
-    /**/
+    
     text-align: center;
 }
 
@@ -40,7 +40,7 @@
 
 
  .e-center-hint {
-    /* background: rgb(179, 14, 14); */
+    background: rgb(179, 14, 14);
     width: 5em;
     height: 5em;
     font-size: 1em;
@@ -52,10 +52,10 @@
 }
 
 .e-center-hint2 {
-    background: yellow;
+    background: white;
     width: 5em;
     height: 5em;
-    /* font-size: 1em; */
+    font-size: 1em;
     text-align: center;
     align-items: center;
     display: grid;
@@ -68,7 +68,7 @@
 
 .e-center-hint > div {
     font-size: 1em;
-}
+} */
 
 td {
     width: 5em;
@@ -98,27 +98,68 @@ td {
     background-color: aquamarine;
 }
 
+.black {
+    background-color: black;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.pink {
+    background-color: pink;
+}
+
+
 table {
     border-collapse: collapse;
     display: inline-grid;
     margin: 1em 0 0 1em;
 }
 
-td {
+/* td {
     border: 2px solid gray;
-}
+} */
 
-td:nth-of-type(3n) {
+/* td:nth-of-type(3n) {
     border-right: 5px solid gray;
+} */
+
+td:nth-of-type(even) {
+    border: 1px solid black;
 }
 
-tr:nth-of-type(3n) {
-    border-bottom: 5px solid gray;
+td:nth-of-type(1) {
+    border-left: 5px solid black;
+}
+
+td:nth-of-type(odd) {
+    border: 1px solid black;
+}
+
+tr:nth-of-type(even) {
+    border: 1px solid black;
+}
+
+tr:nth-of-type(odd) {
+    border: 1px solid black;
 }
 
 .panel-menu {
     display: inline-grid;
     margin: 1em 0 0 1em;
+    font-size: 4vmin;
+}
+
+.mm-inline{
+    display: grid;
+    
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+
+.m-inline{
+    display: grid; 
 }
 
 .m-td{
@@ -134,11 +175,14 @@ tr:nth-of-type(3n) {
     text-align: center;
     border: 1px solid slategray;
     margin: 1px;
+    display: inline-grid;
 }
 
-.m-inline{
-    display: inline-flex;
-}
+
+
+
+
+
 
 
 

@@ -22,30 +22,14 @@
             </table>
 
             <div class="panel-menu">
-                <!-- <label>Цвет</label>
-                <select v-model="currentColor">
-                    <option v-for="item in colors" v-bind:value="item"><span class="red">{item}</span></option>
-                </select> -->
                 <label>Режим</label>
                 <select v-model="currentMode">
                     <option v-for="item,id in modes" v-bind:value="id"><span class="red">{{item}}</span></option>
                 </select>
-                <!-- <label>Цифра</label>
-                <select v-model="currentColor">
-                    <option v-for="item in div_dig" v-bind:value="item"><span class="red">{item}</span></option>
-                </select> -->
-                <!-- <span>{ currentColor } </span>
-                <button>Цифра:</button>
-                <button>Угловая нотация</button>
-                <button>Центральная нотация</button>
-                <button v-on:click="varsClear">Очистить</button> -->
-                <div class="_m-inline">
+                <div class="mm-inline">
                     <div v-for="i in colors" class="m-inline" @click="currentColor=i">
                         <div class="m-td" :class="i"></div>
                     </div>
-                    <!-- <div class="m-inline" @click="currentDigit='',currentColor=''">
-                        <div class="m-td">X</div>
-                    </div> -->
                     <div v-for="i in div_dig" class="m-inline" @click="currentDigit=i">
                         <div class="m-td" v-bind:class="{yellow: currentDigit==i}">{{i}}</div>
                     </div>
