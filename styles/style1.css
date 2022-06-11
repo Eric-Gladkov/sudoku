@@ -159,9 +159,7 @@ tr:nth-of-type(odd) {
     margin: 5px;
 }
 
-.m-inline{
-    display: grid; 
-}
+
 
 .m-td{
     /* width: 9vmin;
