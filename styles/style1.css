@@ -42,7 +42,7 @@
 table {
     border-collapse: collapse;
     display: inline-grid;
-    margin: 1.5em;
+    margin: 1.2em;
 }
 
 td {
@@ -73,7 +73,7 @@ tr:nth-of-type(1) {
 
 .panel-menu {
     display: inline-grid;
-    margin: 0.5em;
+    margin: 1em;
     font-size: 7vmin;
 }
 
