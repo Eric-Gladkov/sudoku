@@ -53,7 +53,7 @@ td {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    border: 0.1px solid gray;
+    border: 0.5px solid gray;
 }
 
 td:nth-of-type(3n) {
