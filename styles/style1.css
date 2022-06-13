@@ -75,7 +75,7 @@ tr:nth-of-type(1) {
 .panel-menu {
     display: inline-grid;
     margin: 1em;
-    font-size: 4vmin;
+    font-size: 7vmin;
 }
 
 .mm-inline{
