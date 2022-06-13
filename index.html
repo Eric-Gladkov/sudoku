@@ -31,7 +31,7 @@
                         <div class="m-td" :class="i"></div>
                     </div>
                     <div v-for="i in div_dig" class="m-inline" @click="currentDigit=i">
-                        <div class="m-td" v-bind:class="{yellow: currentDigit==i}">{{i}}</div>
+                        <div class="m-td" v-bind:class="{grey: currentDigit==i}">{{i}}</div>
                     </div>
                 </div>
             </div>
