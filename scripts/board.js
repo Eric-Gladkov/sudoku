@@ -29,6 +29,8 @@ var app = new Vue({
             "pink",
         ],
 
+        counter: 0,
+
         modes: [
             "цифра",
             "угловая натация",
@@ -49,6 +51,7 @@ var app = new Vue({
 
         currentColor: "",
         currentDigit: "",
+        games: [],
 
     },
 
@@ -81,8 +84,10 @@ var app = new Vue({
             d.push(j + 1);
         }
         // console.log(this.rows);
-
+        this.updateGames();
     },
+
+
 
     methods: {
         setCoordinates: function (x, y) {
@@ -92,11 +97,59 @@ var app = new Vue({
             this.currentY = y;
         },
 
+        updateGames: function () {
+            this.games = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                this.games.push({ key: key, val: localStorage.getItem(key) })
+            }
+        },
+
+        saveGame: function () {
+            var d = new Date();
+            // var date = new Date(2014, 11, 31, 12, 30, 0);
+
+            var options = {
+                // era: 'long',
+                year: 'numeric',
+                // month: 'long',
+                month: 'numeric',
+                day: 'numeric',
+                // weekday: 'long',
+                // timezone: 'UTC',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+            var key = d.toLocaleString("ru", options);
+            // alert(key);
+
+            var game = JSON.stringify(this.rows);
+            // alert(game);
+
+            localStorage.setItem(key, game);
+            this.updateGames();
+        },
+
+        restoreGame: function (key) {
+            var row = localStorage.getItem(key);
+            this.rows = JSON.parse(row);
+            // alert(row);
+        },
+
+        deleteGame: function (key) {
+            localStorage.removeItem(key);
+            this.updateGames();
+        },
+
         cellClick: function (x, y) {
             // var cell = this.rows[y][x];
+            console.log("rows");
+            console.log(this.rows[y][x]);
             this.rows[y][x].color = this.currentColor;
             // this.rows[y][x].v = this.currentDigit;
             this.rows[y][x].component = this.cell_components[this.currentMode];
+
             switch (this.currentMode) {
                 case 0://Цифра
                     this.rows[y][x].v = this.currentDigit;
@@ -115,10 +168,11 @@ var app = new Vue({
                     this.rows[y][x].candidate = ["", "", "", "", "", "", "", "", "",];
                     this.varsClear();
                     break;
+
             }
 
 
-
+            this.counter++;
 
         },
 

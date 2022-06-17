@@ -16,7 +16,8 @@
                 <tr v-for="row in rows">
                     <td v-for="cell in row" v-bind:x=cell.x v-bind:y=cell.y v-bind:class="cell.color"
                         v-on:mouseover="setCoordinates(cell.x, cell.y)" v-on:click="cellClick(cell.x, cell.y)">
-                        <component v-bind:is="cell.component" v-bind:title="cell.v" v-bind:cell="cell"></component>
+                        <component v-bind:is="cell.component" v-bind:title="cell.v" v-bind:cell="cell"
+                            v-bind:key="counter"></component>
                     </td>
                 </tr>
             </table>
@@ -34,6 +35,18 @@
                         <div class="m-td" v-bind:class="{grey: currentDigit==i}">{{i}}</div>
                     </div>
                 </div>
+                <button v-on:click="saveGame">Сохранить</button>
+                <table>
+                    <tr v-for="game in games">
+                        <td>{{game.key}}</td>
+                        <td><button @click="restoreGame(game.key)">Восстановить</button>
+
+                            <button @click="deleteGame(game.key)">Удалить</button>
+                        </td>
+                    </tr>
+                </table>
+
+
             </div>
         </div>
 

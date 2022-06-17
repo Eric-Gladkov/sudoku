@@ -18,15 +18,21 @@ module.exports = {
     };
   },
   watch: {
-    cell: function () {
-      this.m_join();
-    },
+    // cell: function () {
+    //   this.m_join();
+    // },
   },
-  mounted: function () {},
+  mounted: function () {
+    console.log("mounted cell");
+    console.log(this.cell);
+    this.m_join();
+  },
   methods: {
     m_join: function () {
+      console.log("cell");
       console.log(this.cell);
       this.str = this.cell.candidate.join("");
+      console.log("str");
       console.log(this.str);
     },
   },

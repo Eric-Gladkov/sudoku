@@ -1,6 +1,10 @@
 <template>
   <div class="e-hint">
-    <div>1</div>
+    <div v-for="(d, i) in dig" v-bind:key="i">
+      {{ cell.candidate[i] }}
+    </div>
+
+    <!-- <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>{{ title }}</div>
@@ -8,7 +12,7 @@
     <div>6</div>
     <div>7</div>
     <div>8</div>
-    <div>9</div>
+    <div>9</div> -->
   </div>
 </template>
 <script>
@@ -19,9 +23,16 @@
 // });
 module.exports = {
   name: "ehint", // имя маленькими буквами
-  props: ["title", "digit"],
+  props: ["title", "cell"],
   data: function () {
-    return {};
+    return {
+      dig: ["1", "1", "1", "1", "1", "1", "1", "1", "1"],
+    };
+  },
+
+  mounted: function () {
+    console.log("this.cell");
+    console.log(this.cell);
   },
 };
 </script>

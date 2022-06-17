@@ -1,0 +1,9 @@
+var now = new Date();
+
+var key = "20220615 17:30рыба-меч"
+var item = json.stringify(rows);
+localStore.setItem(key, item);
+
+===========================
+item = localStore.getItem(key);
+rows = json.parse(item)
