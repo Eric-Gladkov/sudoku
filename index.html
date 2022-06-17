@@ -35,13 +35,13 @@
                         <div class="m-td" v-bind:class="{grey: currentDigit==i}">{{i}}</div>
                     </div>
                 </div>
-                <button v-on:click="saveGame">Сохранить</button>
-                <table>
+                <button class="but" v-on:click="saveGame">Сохранить</button>
+                <table class="restore">
                     <tr v-for="game in games">
                         <td>{{game.key}}</td>
-                        <td><button @click="restoreGame(game.key)">Восстановить</button>
+                        <td><button class="but" @click="restoreGame(game.key)">Восстановить</button>
 
-                            <button @click="deleteGame(game.key)">Удалить</button>
+                            <button class="but" @click="deleteGame(game.key)">Удалить</button>
                         </td>
                     </tr>
                 </table>
